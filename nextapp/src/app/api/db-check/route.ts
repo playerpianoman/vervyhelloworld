@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { db } from '@/db';
 import { user, session, account, verification } from '@/db/schema';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Query all tables to see what data exists
     const users = await db.select().from(user);
